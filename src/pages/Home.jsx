@@ -16,7 +16,7 @@ export default function Home() {
 
   return (
     <>
-      <Navbar setSearchbtnClick={setSearchbtnClick} />
+      {/* <Navbar setSearchbtnClick={setSearchbtnClick} /> */}
       <section
         className={`mx-4 sm:mx-8 md:mx-16 ${
           searchbtnClick ? "mt-20 opacity-100 scroll-my-0" : "opacity-0"
@@ -24,7 +24,7 @@ export default function Home() {
         <SearchBar searchbtnClick={searchbtnClick} />
       </section>
       <main
-        className={`mx-4 sm:mx-8 md:mx-16 ${offset} max-w-[1024px] lg:mx-auto transition-all duration-200 ease-in-out`}>
+        className={`mx-4 sm:mx-8 md:mx-16 ${offset}  transition-all duration-200 ease-in-out`}>
         <section className=" border mb-16">
           <Hero />
         </section>

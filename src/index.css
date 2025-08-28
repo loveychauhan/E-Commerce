@@ -15,6 +15,12 @@ a.active li {
   width: 100%;
 }
 
+.input {
+  border: 1px solid gray;
+  border-radius: 4px;
+  padding: 6px 12px;
+}
+
 @media (max-width: 640px) {
   a.active {
     color: white;
@@ -27,4 +33,3 @@ a.active li {
     box-shadow: 0 0 2px;
   }
 }
-

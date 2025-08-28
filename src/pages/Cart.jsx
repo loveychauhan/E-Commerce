@@ -3,12 +3,15 @@ import { ShopContext } from "../context/ShopContext";
 import Navbar from "../components/Navbar";
 import Title from "../components/Title";
 import { assets } from "../assets/assets";
+import { useNavigate } from "react-router-dom";
 
 export default function Cart() {
-  const { cartItem, products } = useContext(ShopContext);
+  const { cartItem, products, updateQuantity } = useContext(ShopContext);
   const [productData, setProductData] = useState([]);
   let total = 0;
   let totalQuantity = 1;
+
+  const navigate = useNavigate();
 
   useEffect(() => {
     let tempData = [];
@@ -16,7 +19,7 @@ export default function Cart() {
       for (let s in cartItem[id]) {
         if (cartItem[id][s] > 0) {
           totalQuantity += cartItem[id][s];
-          console.log(totalQuantity);
+          // console.log(totalQuantity);
           tempData.push({
             id: id,
             size: s,
@@ -36,26 +39,24 @@ export default function Cart() {
 
     data.forEach((item) => {
       total += item.price * item.quantity;
-      console.log(total);
+      // console.log(total);
     });
 
     setProductData(data);
   }, [cartItem]);
-  console.log(productData);
 
-  // const clickHandler = (e) => {
-  //   console.log(totalQuantity);
-  // };
+  const clickHandler = (e) => {
+    console.log(e.target.innerText);
+  };
   return (
     <div>
       <Navbar />
-      <main className="mx-4  mt-28 max-w-[1024px] mx-auto">
+      <main className="mx-4  mt-28 max-w-[1024px] mx-auto min-h-[80vh] flex flex-col">
         <Title highlitedText="Cart" normalText="items" />
-
-        {productData.map((item) => {
+        {productData.map((item, index) => {
           return (
             <section
-              key={item.size}
+              key={index}
               className="grid grid-cols-1 sm:grid-cols-2 bg-gray-100 rounded-[8px] gap-4 p-4 my-2 items-center ">
               <div className="flex items-start gap-4 ">
                 <div className="aspect-square w-32">
@@ -73,7 +74,7 @@ export default function Cart() {
 
                   <div className="">
                     <p className="text-xl sm:text-2xl font-medium text-gray-900">
-                      ${item.price * item.quantity}
+                      ${item.price}
                     </p>
                     <p className="text-gray-700">size: {item.size}</p>
                   </div>
@@ -82,9 +83,15 @@ export default function Cart() {
               <div className="flex items-center justify-between px-2">
                 {" "}
                 <div className="flex items-center flex-1 justify-between border px-4 py-2 rounded-xl text-lg max-w-[120px] bg-white shadow-sm">
-                  <button
+                  {/* <button
                     className="hover:text-indigo-600"
-                    onClick={(e) => clickHandler(e)}>
+                    onClick={(e) =>
+                      clickHandler(
+                        e.target.value,
+                        item._id,
+                        size
+                      )
+                    }>
                     −
                   </button>
                   <p className="font-medium">{item.quantity}</p>
@@ -92,13 +99,27 @@ export default function Cart() {
                     onClick={(e) => clickHandler(e)}
                     className="hover:text-indigo-600">
                     +
-                  </button>
+                  </button> */}
+                  <input
+                    type="number"
+                    className="w-full outline-0"
+                    onChange={(e) =>
+                      updateQuantity(
+                        item._id,
+                        item.size,
+                        Number(e.target.value)
+                      )
+                    }
+                    min={1}
+                    value={item.quantity}
+                  />
                 </div>
                 <button className="ml-4 hover:scale-105 transition-transform">
                   <img
                     className="w-6 h-6"
                     src={assets.bin_icon}
                     alt="Delete item"
+                    onClick={() => updateQuantity(item._id, item.size, 0)}
                   />
                 </button>
               </div>
@@ -106,8 +127,17 @@ export default function Cart() {
           );
         })}
 
-        <Title highlitedText="Your" normalText="total" />
-        <h2>{total}</h2>
+        {productData.length > 0 && (
+          <div className="flex justify-end flex-col items-end">
+            <Title highlitedText="Your" normalText="total" />
+            <h2 className="text-3xl font-medium">${total}</h2>
+            <button
+              onClick={() => navigate("/place-order")}
+              className="px-8 py-3 text-lg rounded-xl bg-blue-600 text-white font-semibold my-4">
+              Proceed To checkout
+            </button>
+          </div>
+        )}
       </main>
     </div>
   );
