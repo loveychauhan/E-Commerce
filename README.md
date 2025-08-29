@@ -1,6 +1,4 @@
 
-# 👋 Hi, I'm Lovey
-
 I'm a full-stack web developer focused on building robust backends and visually polished frontends. I specialize in:
 
 - ⚙️ Backend: Node.js, Express.js, MongoDB (Mongoose), JWT, session management
