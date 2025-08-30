@@ -1,23 +1,61 @@
+# 🛍️ E-Commerce
 
-I'm a full-stack web developer focused on building robust backends and visually polished frontends. I specialize in:
+A visually stunning, modular e-commerce web app built with the MERN stack. Designed for scalability, recruiter-ready polish, and delightful user experience. Features animated sidebar transitions, responsive product grids, and clean Git workflows.
 
-- ⚙️ Backend: Node.js, Express.js, MongoDB (Mongoose), JWT, session management
-- 🎨 Frontend: React, TailwindCSS, advanced UI/UX patterns, animation, accessibility
-- 🧠 Logic: Database theory, SQL, normalization, and scalable architecture
-- 📦 Projects: Reproducible portfolio builds with recruiter-ready design and documentation
+## 🚀 Tech Stack
 
-## 🚀 Current Goals
+- **Frontend**: React, Tailwind CSS, Framer Motion
+- **Backend**: Node.js, Express.js
+- **Database**: MongoDB with Mongoose
+- **Version Control**: Git & GitHub
 
-- Build a modular e-commerce UI with category filtering, animated dropdowns, and responsive grids
-- Refactor and optimize filtering logic for performance and clarity
-- Polish portfolio projects for job readiness and technical storytelling
+## ✨ Features
 
-## 📂 Featured Projects
+- 🧭 **Animated Sidebar Navigation** — Smooth collapse/expand transitions
+- 🛒 **Responsive Product Grid** — Flex/Grid layout with dynamic resizing
+- 📦 **Cart Functionality** — Add/remove items with image responsiveness
+- 🔍 **Category & Subcategory Filtering**
+- 📱 **Mobile-First Design** — Fully responsive across devices
+- 🧩 **Modular Components** — Scalable architecture for easy maintenance
+- 🏆 **Bestseller Tagging** — Highlight top products dynamically
 
-| Project | Description | Tech Stack |
-|--------|-------------|------------|
-| 🛍️ E-Commerce UI | Responsive product grid with animated filters and sorting | React, Tailwind, Node.js |
-| 🧩 Auth Flow Debugger | JWT/session-based login with persistent state and error handling | Express, MongoDB, React |
-| 📊 Dashboard Redesign | CSS refactor for modern, responsive layout | TailwindCSS, React |
+## 📁 Folder Structure
 
+├── client/ # React frontend │ ├── components/ # Reusable UI components │ ├── pages/ # Route-based views │ └── assets/ # Images & icons ├── server/ # Express backend │ ├── models/ # Mongoose schemas │ ├── routes/ # API endpoints │ └── controllers/ # Business logic
 
+Code
+
+## 🧪 Setup & Run Locally
+
+```bash
+# Clone the repo
+git clone https://github.com/loveychauhan/E-Commerce.git
+cd E-Commerce
+
+# Install dependencies
+npm install
+
+# Start backend
+npm run server
+
+# Start frontend
+cd client
+npm start
+🧠 Developer Notes
+Built with recruiter-ready polish in mind
+
+Emphasis on animation, accessibility, and modularity
+
+Git workflow automated for clean project setups
+
+📸 Screenshots
+Add screenshots or demo GIFs here to showcase UI/UX
+
+📬 Contact
+Made with ❤️ by Lovey Chauhan Feel free to connect or fork the project!
+
+Code
+
+---
+
+Want to add deployment instructions (e.g. Vercel or Render), or plug in a liv
