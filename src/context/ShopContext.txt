@@ -1,13 +1,13 @@
-import { createContext, useEffect, useState } from "react";
+import { createContext, useState } from "react";
 import { products } from "../assets/assets";
 
 export const ShopContext = createContext();
 
 function ShopContextProvider({ children }) {
-  const name = "Lovey";
   const [cartItem, setCardItem] = useState({});
   const [cartQuantity, setCartQuantity] = useState(0);
   const [prevQuantity, setPrevQuantity] = useState(0);
+
   const addToCart = (id, size) => {
     if (!size) {
       return alert("select a size");
@@ -38,7 +38,7 @@ function ShopContextProvider({ children }) {
     cardData[id][size] = quantity;
 
     if (quantity === 0) {
-       setCartQuantity((prev) => prev - quantity);
+      setCartQuantity((prev) => prev - quantity);
     }
     if (quantity > prevQuantity) {
       setCartQuantity((prev) => prev + 1);
@@ -50,10 +50,9 @@ function ShopContextProvider({ children }) {
     setPrevQuantity(quantity);
   };
 
-  console.log("prevQuantity", prevQuantity);
-  console.log(cartQuantity);
+  // console.log("prevQuantity", prevQuantity);
+  // console.log(cartQuantity);
   const obj = {
-    name,
     products,
     addToCart,
     cartItem,

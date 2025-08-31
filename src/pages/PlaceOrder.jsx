@@ -1,13 +1,14 @@
-import { useState } from "react";
+import { useContext, useState } from "react";
 import Title from "../components/Title";
 import { assets } from "../assets/assets";
 import Navbar from "../components/Navbar";
+import { shopContext } from "../context/contextProvider";
 
 function PlaceOrder() {
-  const [subTotal, setSubTotal] = useState(0);
   const [shipping, setShipping] = useState(10);
-  const [total, setTotal] = useState(0);
   const [ischecked, setIsChecked] = useState("code");
+
+  const { totalCost } = useContext(shopContext);
 
   //   const checkboxHandler = (e) => {
   //     console.log(e.target.checked);
@@ -57,7 +58,7 @@ function PlaceOrder() {
               </div>
               <div className="border-b-[1px] flex justify-between items-center py-2">
                 <p>Sub Total</p>
-                <p>${subTotal}</p>
+                <p>${totalCost}</p>
               </div>
               <div className="border-b-[1px] flex justify-between items-center py-2">
                 <p>Shipping</p>
@@ -65,7 +66,7 @@ function PlaceOrder() {
               </div>
               <div className="flex items-center justify-between py-2">
                 <p>Total</p>
-                <p>${subTotal + shipping}</p>
+                <p className="font-semibold">${totalCost + shipping}</p>
               </div>
             </div>
             <div className="mb-4">

@@ -5,7 +5,6 @@ import EmailNewsLetter from "../components/EmailNewsLetter";
 import Footer from "../components/Footer";
 import Hero from "../components/Hero";
 import LatestCollections from "../components/LatestCollections";
-import Navbar from "../components/Navbar";
 import OurPolicy from "../components/OurPolicy";
 import SearchBar from "../components/SearchBar";
 import Title from "../components/Title";
@@ -16,7 +15,6 @@ export default function Home() {
 
   return (
     <>
-      {/* <Navbar setSearchbtnClick={setSearchbtnClick} /> */}
       <section
         className={`mx-4 sm:mx-8 md:mx-16 ${
           searchbtnClick ? "mt-20 opacity-100 scroll-my-0" : "opacity-0"

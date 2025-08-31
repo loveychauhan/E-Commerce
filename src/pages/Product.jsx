@@ -5,7 +5,8 @@ import Rating from "../components/Rating";
 import { useContext, useState } from "react";
 import Title from "../components/Title";
 import Card from "../components/Card";
-import { ShopContext } from "../context/ShopContext";
+import { shopContext } from "../context/contextProvider";
+// import { ShopContext } from "../context/ShopContext";
 
 function Product() {
   const { productId } = useParams();
@@ -13,8 +14,8 @@ function Product() {
   const [myProd] = allProducts.filter((prod) => prod._id === productId);
   const [toggle, setToggle] = useState("description");
   const [sizeSelected, setSizeSelected] = useState("");
-  const { addToCart } = useContext(ShopContext);
 
+  const { addToCart } = useContext(shopContext);
   const releatedProducts = allProducts
     .filter(
       (product) =>
@@ -65,7 +66,7 @@ function Product() {
             </div>
 
             <button
-              onClick={(e) => addToCart(myProd._id, sizeSelected)}
+              onClick={() => addToCart(myProd._id, sizeSelected)}
               className="px-4 text-gray-900 font-medium py-2 border border-gray-300 rounded-md bg-white text-sm text-gray-700 shadow-sm ">
               Add to Cart
             </button>

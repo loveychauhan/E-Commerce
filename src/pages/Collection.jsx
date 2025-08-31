@@ -90,15 +90,6 @@ export default function Collection() {
               />
             </button>
           </div>
-          {/* <select
-            name="sort"
-            id="sort"
-            onChange={optionsHandler}
-            className="px-4 py-2 border border-gray-300 rounded-md bg-white text-sm text-gray-700 shadow-sm focus:outline-none focus:ring-2 focus:ring-mullRed focus:border-mullRed transition-all duration-300">
-            <option value="">Sort By: Relevant</option>
-            <option value="lowToHigh">Price: Low to High</option>
-            <option value="HighToLow">Price: High to Low</option>
-          </select> */}
           <AnimatedSelect optionsHandler={optionsHandler} />
         </section>
 
