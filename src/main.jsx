@@ -5,13 +5,16 @@ import App from "./App.jsx";
 import { BrowserRouter } from "react-router-dom";
 // import ShopContextProvider from "./context/ShopContext.jsx";
 import ShopContextProvider from "./context/contextProvider.jsx";
+import ShopContextProvider1 from "./context/ShopContex1.jsx";
 
 createRoot(document.getElementById("root")).render(
   <StrictMode>
     <ShopContextProvider>
-      <BrowserRouter>
-        <App />
-      </BrowserRouter>
+      <ShopContextProvider1>
+        <BrowserRouter>
+          <App />
+        </BrowserRouter>
+      </ShopContextProvider1>
     </ShopContextProvider>
   </StrictMode>
 );

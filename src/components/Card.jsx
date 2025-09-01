@@ -4,10 +4,9 @@ export default function Card({ products }) {
   return products?.map((product) => {
     return (
       <article
-        key={product._id}
+        key={product._id || product.id}
         className="group relative bg-white rounded-2xl overflow-hidden shadow-md hover:shadow-xl transition-shadow duration-300">
         <Link to={`/product/${product._id}`} className="block h-full">
-
           <div className="relative overflow-hidden aspect-[4/5]">
             <img
               src={product.image[0]}

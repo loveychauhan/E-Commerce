@@ -71,11 +71,7 @@ export default function Navbar({ setSearchbtnClick }) {
       <header className="flex items-center justify-between z-50 fixed top-0 w-full px-6 md:px-16 py-3 shadow-md bg-white ">
         <div className="max-w-[140px] sm:max-w-[200px]">
           <NavLink to="/">
-            <img
-              className="w-full transition-transform duration-300 hover:scale-105"
-              src={assets.logo}
-              alt="Logo"
-            />
+            <h1 className="text-3xl font-bold text-black ">Neu</h1>
           </NavLink>
         </div>
         <div>
@@ -110,13 +106,13 @@ export default function Navbar({ setSearchbtnClick }) {
           <img
             onClick={() => setSearchbtnClick((prev) => !prev)}
             src={assets.search_icon}
-            className="w-6 h-6 cursor-pointer transition-transform duration-300 hover:scale-110 hover:opacity-80"
+            className="w-4 h-4 sm:w-6 sm:h-6 cursor-pointer transition-transform duration-300 hover:scale-110 hover:opacity-80"
             alt="Search"
           />
           <Link to="/login">
             <img
               src={assets.profile_icon}
-              className="w-6 h-6 cursor-pointer transition-transform duration-300 hover:scale-110 hover:opacity-80"
+              className="w-4 h-4 sm:w-6 sm:h-6 cursor-pointer transition-transform duration-300 hover:scale-110 hover:opacity-80"
               alt="Profile"
             />
           </Link>
@@ -124,7 +120,7 @@ export default function Navbar({ setSearchbtnClick }) {
             <img
               src={assets.cart_icon}
               alt="Cart"
-              className="w-7 h-7 cursor-pointer transition-transform duration-300 hover:scale-110 hover:opacity-80"
+              className="w-4 h-4 sm:w-6 sm:h-6 cursor-pointer transition-transform duration-300 hover:scale-110 hover:opacity-80"
             />
             <span className="absolute -top-2 -right-2 bg-red-500 text-white text-xs font-bold rounded-full w-5 h-5 flex items-center justify-center shadow-md">
               {cartQuantity}
@@ -133,7 +129,7 @@ export default function Navbar({ setSearchbtnClick }) {
           <img
             onClick={() => setVisible(true)}
             src={assets.menu_icon}
-            className="w-6 h-6 sm:hidden block cursor-pointer transition-transform duration-300 hover:scale-110 hover:opacity-80"
+            className="w-4 h-4 sm:hidden block cursor-pointer transition-transform duration-300 hover:scale-110 hover:opacity-80"
             alt="Menu"
           />
         </div>

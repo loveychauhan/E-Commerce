@@ -78,13 +78,13 @@ function PlaceOrder() {
             <div className="flex flex-wrap gap-4 justify-start items-stretch">
               <div
                 onClick={() => setIsChecked("razorpay")}
-                className="flex items-center justify-between gap-4 border rounded-lg px-5 py-3 cursor-pointer transition-all duration-300 hover:shadow-sm">
+                className="flex items-center justify-between gap-4 border rounded-lg px-3 lg:px-5 lg:py-3 py-1.5 cursor-pointer transition-all duration-300 hover:shadow-sm">
                 <div
                   className={`w-4 h-4 rounded-full border border-gray-600 ${
                     ischecked === "razorpay" ? "bg-green-400" : ""
                   }`}></div>
                 <img
-                  className="w-24 object-contain"
+                  className="w-20  lg:w-24 object-contain"
                   src={assets.razorpay_logo}
                   alt="Razorpay"
                 />
@@ -92,13 +92,13 @@ function PlaceOrder() {
 
               <div
                 onClick={() => setIsChecked("stripe")}
-                className="flex items-center justify-between gap-4 border rounded-lg px-5 py-3 cursor-pointer transition-all duration-300 hover:shadow-sm">
+                className="flex items-center justify-between gap-4 border rounded-lg px-3 lg:px-5 lg:py-3 py-1.5  cursor-pointer transition-all duration-300 hover:shadow-sm">
                 <div
                   className={`w-4 h-4 rounded-full border border-gray-600 ${
                     ischecked === "stripe" ? "bg-green-400" : ""
                   }`}></div>
                 <img
-                  className="w-16 h-6 object-contain"
+                  className="w-16 lg:w-24 object-contain"
                   src={assets.stripe_logo}
                   alt="Stripe"
                 />
@@ -106,7 +106,7 @@ function PlaceOrder() {
 
               <div
                 onClick={() => setIsChecked("cod")}
-                className="flex items-center justify-between gap-4 border rounded-lg px-5 py-3 cursor-pointer transition-all duration-300 hover:shadow-sm">
+                className="flex items-center justify-between gap-4 border rounded-lg px-3 lg:px-5 lg:py-3 py-1.5  cursor-pointer transition-all duration-300 hover:shadow-sm">
                 <div
                   className={`w-4 h-4 rounded-full border border-gray-600 ${
                     ischecked === "cod" ? "bg-green-400" : ""

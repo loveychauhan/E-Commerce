@@ -17,7 +17,7 @@ export default function About() {
           />
           <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent flex flex-col items-center justify-center text-center px-4">
             <h1 className="text-white text-3xl sm:text-4xl md:text-5xl font-bold drop-shadow-lg">
-              CodeWare Store
+              Neu Store
             </h1>
             <p className="text-white text-lg sm:text-xl md:text-2xl mt-2 font-medium">
               Your Daily Go-To Store
@@ -25,7 +25,6 @@ export default function About() {
           </div>
         </section>
 
-        {/* New Sections Below */}
         {/* <Features />
         <Categories />
         <Testimonials />

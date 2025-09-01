@@ -9,6 +9,7 @@ import Cart from "./pages/Cart";
 import PlaceOrder from "./pages/PlaceOrder";
 import Login from "./pages/Login";
 import Navbar from "./components/Navbar";
+import ProductList from "./pages/ProductList";
 
 function App() {
   return (
@@ -23,6 +24,7 @@ function App() {
         <Route path="/cart" element={<Cart />} />
         <Route path="/place-order" element={<PlaceOrder />} />
         <Route path="/login" element={<Login />} />
+        <Route path="/list" element={<ProductList />} />
       </Routes>
     </>
   );

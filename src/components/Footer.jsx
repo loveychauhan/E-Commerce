@@ -7,7 +7,9 @@ export default function Footer() {
       <footer className="flex text-gray-700 items-center flex-col md:flex-row  justify-start md:justify-between">
         <section className="max-w-[360px] self-start ">
           <div className="max-w-[120px] my-4">
-            <img className="w-full" src={assets.logo} alt="logo" />
+            <NavLink to="/">
+              <h1 className="text-3xl font-bold text-black ">Neu</h1>
+            </NavLink>
           </div>
           <p className="">
             Lorem ipsum dolor sit amet consectetur adipisicing elit. At ex velit
@@ -44,7 +46,7 @@ export default function Footer() {
       <section className="my-4 grid gap-4  text-center">
         <hr />
         <p className="font-medium">
-          Copyright 2025@ CodewareItpvt@onlineStore.com - All Right Reserved.
+          Copyright 2025@ neu.pvt@onlineStore.com - All Right Reserved.
         </p>
       </section>
     </>
