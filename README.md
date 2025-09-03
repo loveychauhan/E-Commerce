@@ -19,9 +19,6 @@ A visually stunning, modular e-commerce web app built with the MERN stack. Desig
 - 🧩 **Modular Components** — Scalable architecture for easy maintenance
 - 🏆 **Bestseller Tagging** — Highlight top products dynamically
 
-## 📁 Folder Structure
-
-├── client/ # React frontend │ ├── components/ # Reusable UI components │ ├── pages/ # Route-based views │ └── assets/ # Images & icons ├── server/ # Express backend │ ├── models/ # Mongoose schemas │ ├── routes/ # API endpoints │ └── controllers/ # Business logic
 
 Code
 
@@ -41,6 +38,7 @@ npm run server
 # Start frontend
 cd client
 npm start
+```
 🧠 Developer Notes
 Built with recruiter-ready polish in mind
 
