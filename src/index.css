@@ -7,7 +7,7 @@ html {
   scroll-behavior: smooth;
 }
 
-a.active{
+a.active {
   color: red;
 }
 
@@ -21,6 +21,27 @@ a.active{
   padding: 6px 12px;
 }
 
+@layer components {
+  .input-field {
+    @apply border border-gray-300 rounded-lg px-4 py-2 focus:outline-none focus:ring-2 focus:ring-blue-500 transition-all;
+  }
+
+  .animate-fade-in {
+    animation: fadeIn 0.6s ease-out;
+  }
+
+  @keyframes fadeIn {
+    from {
+      opacity: 0;
+      transform: translateY(-10px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+}
+
 @media (max-width: 640px) {
   a.active {
     color: white;
@@ -29,5 +50,4 @@ a.active{
   a {
     transition: all cubic-bezier(0.445, 0.05, 0.55, 0.95) 0.2s;
   }
-
 }

@@ -8,7 +8,8 @@ export default function SearchBar() {
     useContext(shopContext);
   const navigate = useNavigate();
   return (
-    <div className={`max-w-[480px] w-full ml-auto border-[1px] rounded-[4px]`}>
+    <div
+      className={`max-w-[480px] w-full ml-auto border-[1px] bg-transparent  rounded-[4px]`}>
       <form
         action=""
         onSubmit={(e) => {

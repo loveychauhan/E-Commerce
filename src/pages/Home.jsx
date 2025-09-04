@@ -8,7 +8,6 @@ import LatestCollections from "../components/LatestCollections";
 import OurPolicy from "../components/OurPolicy";
 import Title from "../components/Title";
 import { shopContext } from "../context/contextProvider";
-import Empty from "../lottiefiles/Empty";
 
 export default function Home() {
   const { searchbtnClick } = useContext(shopContext);

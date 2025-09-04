@@ -2,7 +2,7 @@ import { useParams } from "react-router-dom";
 import { products } from "../assets/assets";
 import Navbar from "../components/Navbar";
 import Rating from "../components/Rating";
-import { useContext, useState } from "react";
+import { useContext, useEffect, useState } from "react";
 import Title from "../components/Title";
 import Card from "../components/Card";
 import { shopContext } from "../context/contextProvider";
@@ -15,6 +15,9 @@ function Product() {
   const [toggle, setToggle] = useState("description");
   const [sizeSelected, setSizeSelected] = useState("");
 
+  useEffect(() => {
+    window.scrollTo({ top: 0, behavior: "smooth" });
+  }, [productId]);
   const { addToCart } = useContext(shopContext);
   const releatedProducts = allProducts
     .filter(

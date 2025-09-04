@@ -40,9 +40,7 @@ function ShopContextProvider({ children }) {
     }
 
     const filteredData = products.filter((prod) => {
-      const nameMatch =
-        prod.name?.toLowerCase().includes(query) ||
-        prod.name?.toLowerCase().startsWith(query);
+      const nameMatch = prod.name.toLowerCase().includes(query);
       const categoryMatch = prod.subCategory.toLowerCase().includes(query);
       return nameMatch || categoryMatch;
     });

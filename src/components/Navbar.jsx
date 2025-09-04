@@ -1,4 +1,4 @@
-import { Link, NavLink } from "react-router-dom";
+import { Link, NavLink, useNavigate } from "react-router-dom";
 import { assets } from "../assets/assets";
 import { useContext, useState } from "react";
 import Sidebar from "./Sidebar";
@@ -6,6 +6,7 @@ import { shopContext } from "../context/contextProvider";
 
 export default function Navbar() {
   const [visible, setVisible] = useState(false);
+  const navigate = useNavigate();
   const { cartQuantity, setSearchbtnClick } = useContext(shopContext);
   return (
     <>
@@ -45,7 +46,9 @@ export default function Navbar() {
         </div>
         <div className="flex items-center gap-5 sm:gap-8">
           <img
-            onClick={() => setSearchbtnClick((prev) => !prev)}
+            onClick={() => {
+              setSearchbtnClick((prev) => !prev);
+            }}
             src={assets.search_icon}
             className="w-4 h-4 sm:w-6 sm:h-6 cursor-pointer transition-transform duration-300 hover:scale-110 hover:opacity-80"
             alt="Search"

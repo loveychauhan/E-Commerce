@@ -4,8 +4,8 @@ export default function Contact() {
   return (
     <div>
       <Navbar />
-      <main className="mx-4 sm:mx-8 md:mx-16 mt-28">
-        <form className="max-w-2xl mx-auto bg-white shadow-xl rounded-xl p-8 space-y-6 border border-gray-200">
+      <main className="mx-4 sm:mx-8 md:mx-16 mt-12">
+        <form className="max-w-2xl mx-auto bg-white shadow-xl rounded-xl p-8 space-y-4 border border-gray-200">
           <h2 className="text-3xl font-bold text-gray-800 text-center">
             Get in Touch
           </h2>

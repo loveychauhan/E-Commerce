@@ -7,7 +7,7 @@ export default function About() {
     <div className="min-h-screen flex flex-col">
       <Navbar />
 
-      <main className="flex-grow mx-4 sm:mx-8 md:mx-16 mt-24">
+      <main className="flex-grow mx-4 sm:mx-8 md:mx-16 mt-16">
         {/* Hero Section */}
         <section className="relative w-full h-[60vh] sm:h-[70vh] rounded-lg overflow-hidden shadow-lg">
           <img
