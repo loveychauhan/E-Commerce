@@ -1,5 +1,11 @@
 # 🛍️ E-Commerce
 
+🔗 Live Demo
+[Click here to explore the app](https://e-commerce-jade-ten-20.vercel.app/)
+
+![Home Page](https://e-commerce-jade-ten-20.vercel.app/assets/hero_img-WKb3a1z7.png)
+
+
 A visually stunning, modular e-commerce web app built with the MERN stack. Designed for scalability, recruiter-ready polish, and delightful user experience. Features animated sidebar transitions, responsive product grids, and clean Git workflows.
 
 ## 🚀 Tech Stack
