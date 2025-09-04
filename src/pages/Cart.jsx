@@ -4,7 +4,7 @@ import Title from "../components/Title";
 import { assets } from "../assets/assets";
 import { useNavigate } from "react-router-dom";
 import { shopContext } from "../context/contextProvider";
-import EmptyCart from "../lottiefiles/emptyCart";
+import EmptyCart from "../lottiefiles/EmptyCart";
 
 export default function Cart() {
   const { productData, updateQuantity, totalCost } = useContext(shopContext);
