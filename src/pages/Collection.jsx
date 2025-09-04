@@ -13,11 +13,11 @@ export default function Collection() {
   const [priceSorting, setPriceSorting] = useState("");
   const [visible, setVisible] = useState(true);
   const [isChecked, setIsChecked] = useState(false);
-  const { collectionProducts, searchQuery } = useContext(shopContext);
+  const { collectionProducts, searchQuery, searchbtnClick } =
+    useContext(shopContext);
 
   useEffect(() => {
     let allProduct = [...collectionProducts];
-    console.log(allProduct);
     if (category.length > 0) {
       allProduct = allProduct.filter((product) =>
         category.includes(product.category.toLowerCase())
@@ -65,11 +65,11 @@ export default function Collection() {
     const sortOption = e.target.value.toLowerCase();
     setPriceSorting(sortOption);
   };
-
+  const offset = searchbtnClick ? "mt-6" : "mt-12";
   return (
     <div>
       <main
-        className={`mx-4 sm:mx-8 md:mx-16 transition-all duration-200 ease-in-out`}>
+        className={`mx-4 sm:mx-8 md:mx-16 ${offset} transition-all duration-200 ease-in-out`}>
         <section className="flex items-center flex-wrap gap-4 justify-between my-8">
           <div
             className="flex justify-between items-center px-4 py-2 border border-gray-300 rounded-md bg-white text-sm text-gray-700 shadow-sm focus:outline-none focus:ring-2 focus:ring-mullRed transition-all duration-300 "
@@ -86,18 +86,18 @@ export default function Collection() {
           <AnimatedSelect optionsHandler={optionsHandler} />
         </section>
 
-        <section className="flex items-start gap-x-8 md:gap-y-8 md:gap-x-0  justify-between flex-col md:flex-row md:items-start">
+        <section className="flex items-start md:gap-y-8 md:gap-x-0  justify-between flex-col sm:flex-row sm:items-start">
           <section
-            className={`transition-all duration-700 ease-in-out w-full  overflow-hidden border border-gray-200 rounded-xl shadow-sm
+            className={`transition-all duration-700  ease-in-out w-full overflow-hidden border border-gray-200 rounded-xl shadow-sm
     ${
       visible
-        ? "max-h-[1000px] w-full md:max-w-[250px] mb-8 mr-8 opacity-100 p-6"
-        : "max-h-0 opacity-0 p-0 md:max-w-0 pointer-events-none mb-0"
+        ? "max-h-[1000px] w-full sm:max-w-[180px] md:max-w-[220px] mb-8 mr-8 opacity-100 p-4"
+        : "max-h-0 opacity-0 p-0 sm:max-w-0 pointer-events-none mb-0"
     }`}>
             <div className="flex flex-col gap-4 justify-center md:6">
               <div>
                 <p className="mb-2 md:4 font-medium">Category</p>
-                <form className="flex flex-wrap md:items-start md:flex-col items-center justify-between gap-4">
+                <form className="flex flex-wrap sm:items-start sm:flex-col items-center justify-between gap-4">
                   {[
                     { id: "women", label: "Women" },
                     { id: "men", label: "Men" },
@@ -124,7 +124,7 @@ export default function Collection() {
 
               <div>
                 <p className="mb-2 md:4 font-medium">Subcategory</p>
-                <form className="flex flex-wrap md:items-start md:flex-col items-center justify-between gap-4">
+                <form className="flex flex-wrap sm:items-start sm:flex-col items-center justify-between gap-4">
                   {[
                     { id: "topwear", label: "Topwear" },
                     { id: "bottomwear", label: "Bottomwear" },
@@ -152,7 +152,7 @@ export default function Collection() {
           </section>
           {allCollection.length > 0 ? (
             <section
-              className={`grid grid-cols-[repeat(auto-fit,minmax(250px,1fr))] pb-4  flex-1 sm:grid-cols-3 lg:grid-cols-4 gap-6 overflow-y-auto items-start
+              className={`grid grid-cols-[repeat(auto-fit,minmax(250px,1fr))] pb-4 self-stretch  flex-1 sm:grid-cols-2  md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5 gap-6 overflow-y-auto items-start
     transition-all duration-700 ease-in-out`}>
               <Card products={allCollection} />
             </section>

@@ -43,12 +43,12 @@ function ShopContextProvider({ children }) {
       const nameMatch =
         prod.name?.toLowerCase().includes(query) ||
         prod.name?.toLowerCase().startsWith(query);
-      const categoryMatch = prod.category.toLowerCase().includes(query);
+      const categoryMatch = prod.subCategory.toLowerCase().includes(query);
       return nameMatch || categoryMatch;
     });
 
     setCollectionProducts(filteredData);
-  }, [searchQuery, products]);
+  }, [searchQuery]);
 
   useEffect(() => {
     const tempData = [];
