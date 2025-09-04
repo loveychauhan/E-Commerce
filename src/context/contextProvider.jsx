@@ -8,6 +8,9 @@ function ShopContextProvider({ children }) {
   const [productData, setProductData] = useState([]);
   const [totalCost, setTotalCost] = useState(0);
   const [cartQuantity, setCartQuantity] = useState(0);
+  const [searchbtnClick, setSearchbtnClick] = useState(false);
+  const [searchQuery, setSearchQuery] = useState("");
+  const [collectionProducts, setCollectionProducts] = useState(products);
 
   const addToCart = (id, size) => {
     if (!size) {
@@ -27,6 +30,25 @@ function ShopContextProvider({ children }) {
     }
     setCartItem(cartData);
   };
+
+  useEffect(() => {
+    const query = searchQuery.trim().toLowerCase();
+
+    if (!query) {
+      setCollectionProducts(collectionProducts);
+      return;
+    }
+
+    const filteredData = products.filter((prod) => {
+      const nameMatch =
+        prod.name?.toLowerCase().includes(query) ||
+        prod.name?.toLowerCase().startsWith(query);
+      const categoryMatch = prod.category.toLowerCase().includes(query);
+      return nameMatch || categoryMatch;
+    });
+
+    setCollectionProducts(filteredData);
+  }, [searchQuery, products]);
 
   useEffect(() => {
     const tempData = [];
@@ -72,13 +94,18 @@ function ShopContextProvider({ children }) {
     }
     setCartItem(cartData);
   };
-
+  // console.log(collectionProducts);
   const user = {
     addToCart,
     productData,
     updateQuantity,
     cartQuantity,
     totalCost,
+    setSearchbtnClick,
+    searchbtnClick,
+    setSearchQuery,
+    searchQuery,
+    collectionProducts,
   };
   return <shopContext.Provider value={user}>{children}</shopContext.Provider>;
 }

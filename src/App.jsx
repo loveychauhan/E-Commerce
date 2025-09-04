@@ -10,11 +10,22 @@ import PlaceOrder from "./pages/PlaceOrder";
 import Login from "./pages/Login";
 import Navbar from "./components/Navbar";
 import ProductList from "./pages/ProductList";
+import SearchBar from "./components/SearchBar";
+import { shopContext } from "./context/contextProvider";
+import { useContext } from "react";
 
 function App() {
+  const { searchbtnClick } = useContext(shopContext);
+
   return (
     <>
       <Navbar />
+      <section
+        className={`mx-4 sm:mx-8 md:mx-16 ${
+          searchbtnClick ? "mt-20 opacity-100 scroll-my-0" : "opacity-0"
+        } transition-all duration-200 ease-in-out`}>
+        <SearchBar searchbtnClick={searchbtnClick} />
+      </section>
       <Routes>
         <Route path="/" element={<Home />} />
         <Route path="/about" element={<About />} />

@@ -7,9 +7,9 @@ function Login() {
     <div className="mt-28 min-h-screen flex justify-center items-center">
       <div className=" flex gap-3 flex-col shadow-md p-4">
         <h1>{isSignin ? "Login" : "Sign Up"}</h1>
-        {!isSignin ? <input type="text" placeholder="Name" /> : ""}
-        <input type="text" placeholder="Email" />
-        <input type="text" placeholder="Password" />
+        {!isSignin ? <input type="text" placeholder="Name" name="email" /> : ""}
+        <input type="text" placeholder="Email" name="email" />
+        <input type="text" placeholder="Password" name="password" />
         <p
           onClick={() => setIssignIn((prev) => !prev)}
           className="text-end cursor-alias text-[12px] text-blue-500">

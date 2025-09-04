@@ -1,4 +1,4 @@
-import { useContext, useState } from "react";
+import { useContext } from "react";
 import { assets } from "../assets/assets";
 import BestSeller from "../components/BestSeller";
 import EmailNewsLetter from "../components/EmailNewsLetter";
@@ -6,23 +6,17 @@ import Footer from "../components/Footer";
 import Hero from "../components/Hero";
 import LatestCollections from "../components/LatestCollections";
 import OurPolicy from "../components/OurPolicy";
-import SearchBar from "../components/SearchBar";
 import Title from "../components/Title";
+import { shopContext } from "../context/contextProvider";
+import Empty from "../lottiefiles/Empty";
 
 export default function Home() {
-  const [searchbtnClick, setSearchbtnClick] = useState(false);
+  const { searchbtnClick } = useContext(shopContext);
   const offset = searchbtnClick ? "mt-10" : "mt-20";
-
   return (
     <>
-      <section
-        className={`mx-4 sm:mx-8 md:mx-16 ${
-          searchbtnClick ? "mt-20 opacity-100 scroll-my-0" : "opacity-0"
-        } transition-all duration-200 ease-in-out`}>
-        <SearchBar searchbtnClick={searchbtnClick} />
-      </section>
       <main
-        className={`mx-4 sm:mx-8 md:mx-16 ${offset}  transition-all duration-200 ease-in-out`}>
+        className={`mx-4 sm:mx-8 md:mx-16 ${offset} transition-all duration-200 ease-in-out`}>
         <section className=" border mb-16">
           <Hero />
         </section>

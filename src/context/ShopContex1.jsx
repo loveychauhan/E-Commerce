@@ -5,17 +5,17 @@ export const ShopContext1 = createContext();
 
 function ShopContextProvider1({ children }) {
   const [productList, setProductList] = useState([]);
+
   const fetchData = async () => {
     const lists = await axios.get("http://localhost:8000/list").catch((err) => {
       console.log(err.message);
     });
-    console.log(lists.data);
     setProductList(lists.data);
-  };
 
   useEffect(() => {
     fetchData();
   }, []);
+}
 
   // const addToCart = (id, size) => {
   //   if (!size) {

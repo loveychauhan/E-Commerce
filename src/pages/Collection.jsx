@@ -1,10 +1,10 @@
-import { useEffect, useState } from "react";
-import { products } from "../assets/assets";
+import { useContext, useEffect, useState } from "react";
 import Card from "../components/Card";
 import Footer from "../components/Footer";
-import Navbar from "../components/Navbar";
 import { RiArrowDropDownLine } from "react-icons/ri";
 import AnimatedSelect from "../components/AnimatedSelect";
+import { shopContext } from "../context/contextProvider";
+import Empty from "../lottiefiles/Empty";
 
 export default function Collection() {
   const [allCollection, setAllCollection] = useState([]);
@@ -13,10 +13,11 @@ export default function Collection() {
   const [priceSorting, setPriceSorting] = useState("");
   const [visible, setVisible] = useState(true);
   const [isChecked, setIsChecked] = useState(false);
+  const { collectionProducts, searchQuery } = useContext(shopContext);
 
   useEffect(() => {
-    let allProduct = [...products];
-
+    let allProduct = [...collectionProducts];
+    console.log(allProduct);
     if (category.length > 0) {
       allProduct = allProduct.filter((product) =>
         category.includes(product.category.toLowerCase())
@@ -34,7 +35,7 @@ export default function Collection() {
       allProduct = allProduct.sort((a, b) => b.price - a.price);
     }
     setAllCollection(allProduct);
-  }, [category, subCategory, priceSorting]);
+  }, [category, subCategory, searchQuery, priceSorting]);
 
   const categoryHandler = (e) => {
     const selectedCategory = e.target.value.toLowerCase();
@@ -65,18 +66,10 @@ export default function Collection() {
     setPriceSorting(sortOption);
   };
 
-  const handleClearAll = () => {
-    setCategory([]);
-    setSubCategory([]);
-    setPriceSorting("");
-    setAllCollection(products); // optional, if you want instant reset
-  };
-
   return (
     <div>
-      <Navbar />
-
-      <main className="mx-4 sm:mx-8 md:mx-16 mt-28 ">
+      <main
+        className={`mx-4 sm:mx-8 md:mx-16 transition-all duration-200 ease-in-out`}>
         <section className="flex items-center flex-wrap gap-4 justify-between my-8">
           <div
             className="flex justify-between items-center px-4 py-2 border border-gray-300 rounded-md bg-white text-sm text-gray-700 shadow-sm focus:outline-none focus:ring-2 focus:ring-mullRed transition-all duration-300 "
@@ -157,13 +150,15 @@ export default function Collection() {
               </div>
             </div>
           </section>
-          <section
-            className={`grid grid-cols-[repeat(auto-fit,minmax(250px,1fr))] pb-4  flex-1 sm:grid-cols-3 lg:grid-cols-4 gap-6 overflow-y-auto items-start
+          {allCollection.length > 0 ? (
+            <section
+              className={`grid grid-cols-[repeat(auto-fit,minmax(250px,1fr))] pb-4  flex-1 sm:grid-cols-3 lg:grid-cols-4 gap-6 overflow-y-auto items-start
     transition-all duration-700 ease-in-out`}>
-            <Card
-              products={allCollection.length > 0 ? allCollection : products}
-            />
-          </section>
+              <Card products={allCollection} />
+            </section>
+          ) : (
+            <Empty />
+          )}
         </section>
       </main>
       <footer className="mx-4 sm:mx-8 md:mx-16 mt-24">
