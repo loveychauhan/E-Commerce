@@ -10,68 +10,6 @@ export default function Cart() {
   const { productData, updateQuantity, totalCost } = useContext(shopContext);
   const navigate = useNavigate();
 
-  //   useEffect(() => {
-  //     let tempData = [];
-  //     for (const id in cartItem) {
-  //       for (let s in cartItem[id]) {
-  //         if (cartItem[id][s] > 0) {
-  //           totalQuantity += cartItem[id][s];
-  //           // console.log(totalQuantity);
-  //           tempData.push({
-  //             id: id,
-  //             size: s,
-  //             quantity: cartItem[id][s],
-  //           });
-  //         }
-  //       }
-  //     }
-
-  //     const data = tempData.map((item) => {
-  //       const product = products.find((product) => product._id === item.id);
-  //       return {
-  //         ...product,
-  //         size: item.size,
-  //         quantity: item.quantity,
-  //       };
-  //     });
-
-  //     data.forEach((item) => {
-  //       total += item.price * item.quantity;
-  //       // console.log(total);
-  //     });
-
-  //     setProductData(data);
-  //   }, [cartItem]);
-
-  //   useEffect(() => {
-  //     const tempData = [];
-  //     for (const id in cartItem) {
-  //       for (const size in cartItem[id]) {
-  //         if (cartItem[id][size] > 0) {
-  //           tempData.push({
-  //             id: id,
-  //             size: size,
-  //             quantity: cartItem[id][size],
-  //           });
-  //         }
-  //       }
-  //     }
-
-  //     let total = 0;
-  //     const data = tempData.map((item) => {
-  //       const product = products.find((prod) => prod._id === item.id);
-  //       const newData = {
-  //         ...product,
-  //         size: item.size,
-  //         quantity: item.quantity,
-  //       };
-  //       total += newData.quantity * newData.price;
-  //       return newData;
-  //     });
-  //     setProductData(data);
-  //     setTotalCost(total);
-  //   }, [cartItem]);
-
   return (
     <div>
       <Navbar />
