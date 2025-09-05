@@ -10,7 +10,7 @@ A modular, visually stunning e-commerce web app built with the MERN stack. Desig
 
 ##  Live Demo
 
-[Check out the live demo!](https://e-commerce-jade-ten-20.vercel.app) :contentReference[oaicite:0]{index=0}
+[Check out the live demo!](https://e-commerce-jade-ten-20.vercel.app)
 
 ---
 
